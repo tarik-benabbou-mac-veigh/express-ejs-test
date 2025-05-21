@@ -23,18 +23,18 @@ app.set('view engine', 'ejs');
 app.use('/static', express.static('public'));
 
 app.get('/', (req,res)=>{
-    res.render('home');
+    res.render('pages/home');
 });
 
 app.get('/about/:title', (req,res)=>{
     const data = {
         title: req.params.title,
     };
-    res.render('about', data);
+    res.render('pages/about', data);
 });
 
 app.get('/posts', (req,res)=>{
-    res.render('posts-form', {posts: articles});
+    res.render('pages/posts-form', {posts: articles});
 });
 
 app.listen(port, (req,res)=>{
